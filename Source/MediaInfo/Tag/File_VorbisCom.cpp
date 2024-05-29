@@ -264,10 +264,10 @@ void File_VorbisCom::Data_Parse()
         else if (Key==__T("LYRICS"))                 Fill(StreamKind_Common,   0, "Lyrics", Value);
         else if (Key==__T("LWING_GAIN"))             Fill(StreamKind_Multiple, 0, "ReplayGain_Gain", Value.To_float64(), 2);
         else if (Key==__T("LOCATION"))               Fill(StreamKind_Common,   0, "Recorded/Location", Value);
-        else if (Key==__T("MUSICBRAINZ_ALBUMID"))    {}
-        else if (Key==__T("MUSICBRAINZ_ALBUMARTISTID")) {}
+        else if (Key==__T("MUSICBRAINZ_ALBUMID"))    Fill(StreamKind_Common,   0, "MusicBrainz_AlbumID", Value);
+        else if (Key==__T("MUSICBRAINZ_ALBUMARTISTID")) Fill(StreamKind_Common, 0, "MusicBrainz_AlbumArtistID", Value);
         else if (Key==__T("MUSICBRAINZ_ARTISTID"))   {}
-        else if (Key==__T("MUSICBRAINZ_TRACKID"))    {}
+        else if (Key==__T("MUSICBRAINZ_TRACKID"))    Fill(StreamKind_Common,   0, "MusicBrainz_TrackID", Value);
         else if (Key==__T("MUSICBRAINZ_SORTNAME"))   Fill(StreamKind_Common,   0, "Performer/Sort", Value);
         else if (Key==__T("MUSICBRAINZ_DISCID"))     {}
         else if (Key==__T("NULL"))                   {}
